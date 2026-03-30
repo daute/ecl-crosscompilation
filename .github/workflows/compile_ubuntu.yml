@@ -1,0 +1,72 @@
+name: compile_ubuntu
+
+on: [push]
+
+env:
+  BUILD_TYPE: Release
+
+permissions:
+  contents: read
+
+jobs:
+  compile_without-asdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout_git
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - name: install_packages
+        run: |
+             sudo apt-get update
+             sudo apt-get install gcc gcc-mingw-w64-x86-64 cmake make nsis
+      - name: configure
+        run: |
+             export CXXFLAGS="-Wall -Wextra -ansi"
+             mkdir build
+             cd build
+             cmake -DWITH_ASDF=NO ..
+             cd ..
+      - name: compile
+        run: |
+             cd build
+             cmake --build .
+             cd ..
+      - name: create_package
+        run: |
+             cd build
+             cmake --build . --target package
+             cd ..
+             
+  compile_with-asdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout_git
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - name: install_packages
+        run: |
+             sudo apt-get update
+             sudo apt-get install gcc gcc-mingw-w64-x86-64 cmake make nsis
+      - name: configure
+        run: |
+             export CXXFLAGS="-Wall -Wextra -ansi"
+             mkdir build
+             cd build
+             cmake -DWITH_ASDF=YES ..
+             cd ..
+      - name: compile
+        run: |
+             cd build
+             cmake --build .
+             cd ..
+      - name: create_package
+        run: |
+             cd build
+             cmake --build . --target package
+             cd ..
