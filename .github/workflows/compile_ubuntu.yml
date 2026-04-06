@@ -38,11 +38,11 @@ jobs:
              cd build
              cmake --build . --target package
              cd ..
-       - name: upload
-         uses: actions/upload-artifact@v4
-         with:
-           name: ecl installer
-           path: /home/runner/work/ecl-crosscompilation/ecl-crosscompilation/build/ecl-*-win64.exe
+      - name: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecl installer
+          path: /home/runner/work/ecl-crosscompilation/ecl-crosscompilation/build/ecl-*-win64.exe
 
   compile_with-asdf:
     runs-on: ubuntu-latest
