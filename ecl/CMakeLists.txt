@@ -30,4 +30,4 @@ ExternalProject_Add(ecl-bytecode
           COMMAND ${CMAKE_COMMAND} -E copy "${MINGW_LIBGCC}" "${CMAKE_BINARY_DIR}/ecl-cross-root"
           COMMAND ${CMAKE_COMMAND} -E copy "${MINGW_LIBWINPTHREAD}" "${CMAKE_BINARY_DIR}/ecl-cross-root"
 )
-install(DIRECTORY ${CMAKE_BINARY_DIR}/ecl-cross-root/ DESTINATION "ecl-${ECL_VERSION}")
+install(DIRECTORY ${CMAKE_BINARY_DIR}/ecl-cross-root/ DESTINATION .)

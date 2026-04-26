@@ -56,7 +56,7 @@ set(CPACK_PACKAGE_VENDOR "ECL Team")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE")
 set(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL ON)
 set(CPACK_NSIS_URL_INFO_ABOUT "https://ecl.common-lisp.dev/")
-set(CPACK_NSIS_MENU_LINKS "Embeddable Common-Lisp" "bin/ecl.exe" "About ECL" "https://ecl.common-lisp.dev/" "ECL Manual"  "https://ecl.common-lisp.dev/static/files/manual/current-manual/" "ECL License" "https://gitlab.com/embeddable-common-lisp/ecl/-/raw/develop/LICENSE")
+set(CPACK_NSIS_MENU_LINKS "Embeddable Common-Lisp" "ecl.exe" "About ECL" "https://ecl.common-lisp.dev/" "ECL Manual"  "https://ecl.common-lisp.dev/static/files/manual/current-manual/" "ECL License" "https://gitlab.com/embeddable-common-lisp/ecl/-/raw/develop/LICENSE")
 set(CPACK_PACKAGE_FILE_NAME "ecl-${PROJECT_VERSION}-${INSTALLERSUFFIX}")
 set(CPACK_NSIS_COMPRESSOR "/SOLID lzma")
 
