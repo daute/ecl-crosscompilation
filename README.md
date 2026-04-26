@@ -15,4 +15,9 @@ It does include an up-to-date version of libgmp, the included (older)
 version did not compile too. It included the Mingw libraries, Microsoft
 VS redistributable dlls are not needed.
 
+If the compiliation works (it does without ASDF), you can look in the
+logfiles (if you are logged in into Github) and can find an artifact download
+link at the end of the "upload" step - the installer (in a zip file).
+Unsigned, of course, it cannot be signed in an automatic github CI job.
+
 Regards, Wolfgang Dautermann
