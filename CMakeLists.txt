@@ -59,5 +59,6 @@ set(CPACK_NSIS_URL_INFO_ABOUT "https://ecl.common-lisp.dev/")
 set(CPACK_NSIS_MENU_LINKS "ecl.exe" "Embeddable Common-Lisp" "https://ecl.common-lisp.dev/" "ECL Website" "https://ecl.common-lisp.dev/static/files/manual/current-manual/" "ECL manual" "https://gitlab.com/embeddable-common-lisp/ecl/-/raw/develop/LICENSE" "ECL License")
 set(CPACK_PACKAGE_FILE_NAME "ecl-${PROJECT_VERSION}-${INSTALLERSUFFIX}")
 set(CPACK_NSIS_COMPRESSOR "/SOLID lzma")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "ecl-${PROJECT_VERSION}")
 
 include(CPack)
