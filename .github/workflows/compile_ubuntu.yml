@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  compile_without-asdf:
+  compile:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -26,42 +26,7 @@ jobs:
              export CXXFLAGS="-Wall -Wextra -ansi"
              mkdir build
              cd build
-             cmake -DWITH_ASDF=NO ..
-             cd ..
-      - name: compile
-        run: |
-             cd build
-             cmake --build .
-             cd ..
-      - name: create_package
-        run: |
-             cd build
-             cmake --build . --target package
-             cd ..
-      - name: upload
-        uses: actions/upload-artifact@v7
-        with:
-          name: ecl installer
-          path: /home/runner/work/ecl-crosscompilation/ecl-crosscompilation/build/ecl-*-win64.exe
-
-  compile_with-asdf:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    steps:
-      - name: Checkout_git
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 1
-      - name: install_packages
-        run: |
-             sudo apt-get update
-             sudo apt-get install gcc gcc-mingw-w64-x86-64 cmake make nsis
-      - name: configure
-        run: |
-             export CXXFLAGS="-Wall -Wextra -ansi"
-             mkdir build
-             cd build
-             cmake -DWITH_ASDF=YES ..
+             cmake ..
              cd ..
       - name: compile
         run: |
