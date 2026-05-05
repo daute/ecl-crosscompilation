@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 
-set(ECL_MD5 "92c91aabe58bf15d360493904ed86850")
+set(ECL_MD5 "e266e118d276a7a6b0176ccb0e45f6d5")
 set(ECL_URL "https://ecl.common-lisp.dev/static/files/release/ecl-${PROJECT_VERSION}.tgz")
 
 ExternalProject_Add(ecl-native

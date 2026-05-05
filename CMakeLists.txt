@@ -10,14 +10,6 @@ cmake_policy(SET CMP0135 NEW)
 
 set(CMAKE_SYSTEM_NAME Windows)
 
-option(WITH_ASDF "Include ASDF." NO)
-if(WITH_ASDF)
-    set(ASDF_OPTION "--with-asdf=yes")
-else()
-    set(ASDF_OPTION "--with-asdf=no")
-endif()
-
-message (STATUS "ASDF: ${ASDF_OPTION}")
 set(HOST x86_64-w64-mingw32)
 set(INSTALLERSUFFIX "win64")
 
@@ -29,7 +21,7 @@ project(ecl
     LANGUAGES C
     DESCRIPTION "ECL (Embeddable Common-Lisp) is an interpreter of the Common-Lisp language."
     HOMEPAGE_URL "https://ecl.common-lisp.dev/"
-    VERSION 26.3.27)
+    VERSION 26.5.5)
 
 # What is the build system?
 execute_process(COMMAND gcc -dumpmachine OUTPUT_VARIABLE BUILDHOST OUTPUT_STRIP_TRAILING_WHITESPACE)
