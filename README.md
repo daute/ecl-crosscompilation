@@ -17,7 +17,11 @@ end of the "upload" step - the installer (in a zip file).
 Unsigned, of course, it cannot be signed in an automatic github CI job.
 
 If you want to use the C compiler interface, you need a C compiler too,
-that's not included. E.g. the mingw-w64 compilers from https://winlibs.com/
+that's not included. The compiler should be in the PATH.
+
+For example the mingw-w64 compilers from https://winlibs.com/ or
+https://github.com/skeeto/w64devkit can be used.
+
 Since ECL is build using the Mingw (cross) compiler, `compiler:*cc*` is
 set to that compiler.
 
